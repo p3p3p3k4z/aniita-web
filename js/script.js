@@ -6,210 +6,194 @@ document.addEventListener('DOMContentLoaded', () => {
     // ====================================================================================
     //  NUESTRA NUEVA "BASE DE DATOS" CON LA FICHA TÉCNICA COMPLETA
     // ====================================================================================
-    const stateData = {
-        "Oaxaca": {
-            modelSrc: "modelos/isla_oaxaca.glb",
-            infoCompleta: {
-                titulo: "Propuesta Integral de Isla Polinizadora – Oaxaca",
-                contexto: {
-                    ubicacion: "Oaxaca, México",
-                    climas: "Templado subhúmedo, tropical seco y húmedo.",
-                    usosAgricolas: "Maíz, café, agave, frutales, hortalizas.",
-                    reto: "Pérdida de polinizadores por deforestación, agroquímicos y cambio climático."
-                },
-                dosel: {
-                    titulo: "Dosel (Canopy Layer – Árboles)",
-                    beneficios: "Captura de carbono, restauración de suelos, refugio de fauna, soporte para otras plantas.",
-                    especies: [
-                        { nombre: "Tepehuaje", cientifico: "Lysiloma acapulcense", funcion: "Fijador de nitrógeno, sombra, floración para abejas." },
-                        { nombre: "Mezquite", cientifico: "Prosopis spp.", funcion: "Resiliente a sequía, mejora suelo, néctar abundante." },
-                        { nombre: "Guaje", cientifico: "Leucaena leucocephala", funcion: "Comestible, floración prolongada, buena para suelos degradados." },
-                        { nombre: "Copal", cientifico: "Bursera spp.", funcion: "Aporta néctar, resina cultural, alimento para abejas." },
-                        { nombre: "Guayabo", cientifico: "Psidium guajava", funcion: "Árbol frutal, flores polinizadas por abejas y murciélagos." },
-                        { nombre: "Zapote negro", cientifico: "Diospyros digyna", funcion: "Árbol frutal, sombra, alimento y refugio." }
-                    ]
-                },
-                sotobosque: {
-                    titulo: "Sotobosque (Understory Layer – Arbustos y Herbáceas)",
-                    beneficios: "Diversidad floral, control biológico de plagas, soporte para polinizadores especializados.",
-                    especies: [
-                        { nombre: "Salvia mexicana", cientifico: "", funcion: "Floración atractiva para colibríes y abejas." },
-                        { nombre: "Dalia coccinea", cientifico: "Flor nacional de México", funcion: "Atracción visual, néctar abundante." },
-                        { nombre: "Lantana camara", cientifico: "", funcion: "Floración prolongada, resistente a sequía." },
-                        { nombre: "Flor de Mayo", cientifico: "Plumeria rubra", funcion: "Muy visitada por mariposas y colibríes." },
-                        { nombre: "Bugambilia", cientifico: "Bougainvillea spectabilis", funcion: "Resistente, refugio para insectos, flores casi todo el año." }
-                    ]
-                },
-                coberturaSuelo: {
-                    titulo: "Cobertura del Suelo (Ground Cover)",
-                    beneficios: "Protegen el suelo, retienen humedad, aumentan resiliencia a sequías.",
-                    especies: [
-                        { nombre: "Cempasúchil", cientifico: "Tagetes erecta", funcion: "Polinizadores + control natural de plagas (nematicida)." },
-                        { nombre: "Cosmos sulphureus", cientifico: "", funcion: "Muy visitada por abejas y mariposas." },
-                        { nombre: "Albahaca silvestre", cientifico: "Ocimum micranthum", funcion: "Aroma, néctar, repelente natural." },
-                        { nombre: "Zinnia elegans", cientifico: "Flor silvestre mexicana", funcion: "Flor duradera, visitada por mariposas y abejas." }
-                    ]
-                },
-                polinizadores: {
-                    titulo: "Polinizadores Clave",
-                    especies: [
-                        { nombre: "Abeja melipona", cientifico: "Melipona beecheii", rol: "Abeja sin aguijón nativa, ideal para agricultura." },
-                        { nombre: "Abeja europea", cientifico: "Apis mellifera", rol: "Polinizadora generalista." },
-                        { nombre: "Mariposa monarca", cientifico: "Danaus plexippus", rol: "Migratoria, polinización de flores silvestres." },
-                        { nombre: "Colibríes locales", cientifico: "Trochilidae spp.", rol: "Polinizadores de flores tubulares." }
-                    ]
-                },
-                auxiliares: {
-                    titulo: "Insectos Auxiliares",
-                    especies: [
-                        { nombre: "Mariquitas", cientifico: "Coccinellidae", funcion: "Control biológico de pulgones." },
-                        { nombre: "Crisopas", cientifico: "Chrysopidae", funcion: "Depredadoras de plagas agrícolas." },
-                        { nombre: "Escarabajos estercoleros", cientifico: "", funcion: "Reciclaje de nutrientes y mejora del suelo." }
-                    ]
-                },
-                infraestructura: {
-                    titulo: "Infraestructura Adicional",
-                    elementos: [
-                        "<strong>Hotel de insectos:</strong> Troncos perforados, cañas, barro.",
-                        "<strong>Sistema de captación de agua:</strong> Canaletas y cisterna para mantener humedad.",
-                        "<strong>Zona de compostaje:</strong> Uso de poda y residuos agrícolas."
-                    ]
-                }
-            }
-        },
-        // Puedes copiar la estructura de "Oaxaca" para "Chiapas" y "Guerrero" y cambiar los datos.
-        "Chiapas": {
-        modelSrc: "modelos/isla_chiapas.glb",
+const stateData = {
+    "Oaxaca": {
+        modelSrc: "modelos/isla_oaxaca.glb",
         infoCompleta: {
-            titulo: "Propuesta de Isla Polinizadora – Chiapas",
+            titulo: "Comprehensive Pollinator Island Proposal – Oaxaca",
             contexto: {
-                ubicacion: "Chiapas, México.",
-                climas: "Tropical húmedo, templado húmedo, selva baja y alta.",
-                usosAgricolas: "Café, cacao, plátano, maíz, caña de azúcar, frutales tropicales.",
-                reto: "Deforestación, pérdida de polinizadores, agricultura intensiva."
+                ubicacion: "Oaxaca, Mexico",
+                climas: "Temperate sub-humid, dry and humid tropical.",
+                usosAgricolas: "Corn, coffee, agave, fruit trees, vegetables.",
+                reto: "Loss of pollinators due to deforestation, agrochemicals, and climate change."
             },
             dosel: {
-                titulo: "Dosel (Canopy Layer – Árboles medianos y grandes)",
-                beneficios: "Captura de carbono, restauración de suelos, refugio de fauna, soporte para otras plantas y polinizadores.",
+                titulo: "Canopy Layer – Trees",
+                beneficios: "Carbon capture, soil restoration, wildlife refuge, support for other plants.",
                 especies: [
-                    { nombre: "Ceiba", cientifico: "Ceiba pentandra", funcion: "Árbol emblemático, sombra, refugio de fauna, flores para polinizadores grandes." },
-                    { nombre: "Cacao", cientifico: "Theobroma cacao", funcion: "Floración constante, alimento para abejas y murciélagos polinizadores." },
-                    { nombre: "Guayacán", cientifico: "Tabebuia spp.", funcion: "Floración vistosa, atracción de abejas y colibríes." },
-                    { nombre: "Mango", cientifico: "Mangifera indica", funcion: "Árbol frutal, flores y frutos atractivos para fauna y polinizadores." },
-                    { nombre: "Tzalam", cientifico: "Lysiloma latisiliquum", funcion: "Fijador de nitrógeno, sombra, nectarífero para abejas." }
+                    { nombre: "Tepehuaje", cientifico: "Lysiloma acapulcense", funcion: "Nitrogen fixer, shade, flowering for bees." },
+                    { nombre: "Mesquite", cientifico: "Prosopis spp.", funcion: "Drought resilient, improves soil, abundant nectar." },
+                    { nombre: "Guaje", cientifico: "Leucaena leucocephala", funcion: "Edible, prolonged flowering, good for degraded soils." },
+                    { nombre: "Copal", cientifico: "Bursera spp.", funcion: "Provides nectar, cultural resin, food for bees." },
+                    { nombre: "Guava", cientifico: "Psidium guajava", funcion: "Fruit tree, flowers pollinated by bees and bats." },
+                    { nombre: "Black Sapote", cientifico: "Diospyros digyna", funcion: "Fruit tree, shade, food, and shelter." }
                 ]
             },
             sotobosque: {
-                titulo: "Sotobosque (Understory Layer – Arbustos y herbáceas)",
-                beneficios: "Diversidad floral, refugio para polinizadores especializados y mariposas, floración escalonada.",
+                titulo: "Understory Layer – Shrubs and Herbaceous Plants",
+                beneficios: "Floral diversity, biological pest control, support for specialized pollinators.",
                 especies: [
-                    { nombre: "Salvia chiapensis", cientifico: "", funcion: "Floración para colibríes y abejas locales." },
-                    { nombre: "Ixora coccinea", cientifico: "Ixora roja", funcion: "Atracción de polinizadores, floración duradera." },
-                    { nombre: "Hibiscus rosa-sinensis", cientifico: "", funcion: "Floración vistosa, néctar para abejas y colibríes." },
-                    { nombre: "Heliconia spp.", cientifico: "", funcion: "Flores tubulares, importantes para colibríes." },
-                    { nombre: "Achiote", cientifico: "Bixa orellana", funcion: "Floración prolongada, semillas útiles, atracción de insectos." }
+                    { nombre: "Mexican Sage", cientifico: "", funcion: "Attractive flowering for hummingbirds and bees." },
+                    { nombre: "Scarlet Dahlia", cientifico: "Mexico's national flower", funcion: "Visual attraction, abundant nectar." },
+                    { nombre: "Lantana", cientifico: "Lantana camara", funcion: "Prolonged flowering, drought resistant." },
+                    { nombre: "Plumeria", cientifico: "Plumeria rubra", funcion: "Frequently visited by butterflies and hummingbirds." },
+                    { nombre: "Bougainvillea", cientifico: "Bougainvillea spectabilis", funcion: "Resistant, shelter for insects, flowers almost all year." }
                 ]
             },
             coberturaSuelo: {
-                titulo: "Cobertura del Suelo (Ground Cover – Hierbas y flores rastreras)",
-                beneficios: "Protección del suelo, retención de humedad, microclima estable.",
+                titulo: "Ground Cover",
+                beneficios: "Protect the soil, retain moisture, increase drought resilience.",
                 especies: [
-                    { nombre: "Cempasúchil", cientifico: "Tagetes erecta", funcion: "Control natural de plagas, atracción de polinizadores." },
-                    { nombre: "Girasol nativo", cientifico: "Helianthus annuus var. mexicanus", funcion: "Polen y néctar abundante, visitado por abejas." },
-                    { nombre: "Verdolaga", cientifico: "Portulaca oleracea", funcion: "Comestible, floración para abejas pequeñas." },
-                    { nombre: "Hierbabuena", cientifico: "Mentha spp.", funcion: "Atractiva para abejas, repelente natural de plagas." },
-                    { nombre: "Zinnia elegans", cientifico: "Flor silvestre mexicana", funcion: "Flor duradera, polinizada por abejas y mariposas." }
+                    { nombre: "Marigold", cientifico: "Tagetes erecta", funcion: "Pollinators + natural pest control (nematicide)." },
+                    { nombre: "Sulfur Cosmos", cientifico: "Cosmos sulphureus", funcion: "Frequently visited by bees and butterflies." },
+                    { nombre: "Wild Basil", cientifico: "Ocimum micranthum", funcion: "Aroma, nectar, natural repellent." },
+                    { nombre: "Zinnia", cientifico: "Mexican wild flower", funcion: "Long-lasting flower, visited by butterflies and bees." }
                 ]
             },
             polinizadores: {
-                titulo: "Polinizadores Clave en Chiapas",
+                titulo: "Key Pollinators",
                 especies: [
-                    { nombre: "Abeja melipona", cientifico: "Melipona beecheii", rol: "Abeja sin aguijón nativa, polinizadora eficiente de cultivos tropicales." },
-                    { nombre: "Abeja europea", cientifico: "Apis mellifera", rol: "Polinizadora generalista." },
-                    { nombre: "Colibríes locales", cientifico: "Trochilidae spp.", rol: "Polinizadores de flores tubulares y heliconias." },
-                    { nombre: "Mariposa morfo azul", cientifico: "Morpho peleides", rol: "Polinizador ocasional, indicador de salud del ecosistema." }
+                    { nombre: "Melipona Bee", cientifico: "Melipona beecheii", rol: "Native stingless bee, ideal for agriculture." },
+                    { nombre: "European Honey Bee", cientifico: "Apis mellifera", rol: "Generalist pollinator." },
+                    { nombre: "Monarch Butterfly", cientifico: "Danaus plexippus", rol: "Migratory, pollinates wildflowers." },
+                    { nombre: "Local Hummingbirds", cientifico: "Trochilidae spp.", rol: "Pollinators of tubular flowers." }
                 ]
             },
             auxiliares: {
-                titulo: "Insectos Auxiliares",
+                titulo: "Beneficial Insects",
                 especies: [
-                    { nombre: "Mariquitas", cientifico: "Coccinellidae", funcion: "Control biológico de pulgones y áfidos." },
-                    { nombre: "Crisopas", cientifico: "Chrysopidae", funcion: "Depredadoras de plagas agrícolas." },
-                    { nombre: "Escarabajos estercoleros", cientifico: "", funcion: "Reciclaje de nutrientes y mejora del suelo." }
+                    { nombre: "Ladybugs", cientifico: "Coccinellidae", funcion: "Biological control of aphids." },
+                    { nombre: "Lacewings", cientifico: "Chrysopidae", funcion: "Predators of agricultural pests." },
+                    { nombre: "Dung Beetles", cientifico: "", funcion: "Nutrient recycling and soil improvement." }
                 ]
             },
             infraestructura: {
-                titulo: "Infraestructura Adicional",
+                titulo: "Additional Infrastructure",
                 elementos: [
-                    "<strong>Hotel de insectos:</strong> Troncos perforados, cañas y barro.",
-                    "<strong>Sistema de captación de agua:</strong> Canaletas y cisterna para humedad constante.",
-                    "<strong>Zona de compostaje:</strong> Uso de poda y residuos agrícolas."
+                    "<strong>Insect hotel:</strong> Drilled logs, reeds, clay.",
+                    "<strong>Water harvesting system:</strong> Gutters and cistern to maintain humidity.",
+                    "<strong>Composting area:</strong> Use of pruning and agricultural waste."
                 ]
             }
         }
     },
-        "Guerrero": {
-        modelSrc: "modelos/isla_guerrero.glb",
+    "Chiapas": {
+        modelSrc: "modelos/isla_chiapas.glb",
         infoCompleta: {
-            titulo: "Propuesta de Isla Polinizadora – Guerrero",
+            titulo: "Pollinator Island Proposal – Chiapas",
             contexto: {
-                ubicacion: "Guerrero, México.",
-                climas: "Selvas bajas caducifolias, bosques templados, manglares y matorrales espinosos.",
-                usosAgricolas: "Maíz, agave, café, frutales tropicales y hortalizas.",
-                reto: "Proteger biodiversidad, mejorar resiliencia a sequía y diversificar la agricultura."
+                ubicacion: "Chiapas, Mexico.",
+                climas: "Humid tropical, humid temperate, low and high jungle.",
+                usosAgricolas: "Coffee, cocoa, banana, corn, sugarcane, tropical fruits.",
+                reto: "Deforestation, loss of pollinators, intensive agriculture."
             },
             dosel: {
-                titulo: "Dosel (Árboles, Arbustos y Cactáceas Nativas)",
-                beneficios: "Resiliencia a sequía, captura de carbono, flores y frutos para polinizadores adaptados.",
+                titulo: "Canopy Layer – Medium and Large Trees",
+                beneficios: "Carbon capture, soil restoration, wildlife refuge, support for other plants and pollinators.",
                 especies: [
-                    { nombre: "Calliandra hirsuta", cientifico: "Huaje o timbre", funcion: "Arbusto leñoso con flores vistosas que atraen colibríes y abejas." },
-                    { nombre: "Bursera spp.", cientifico: "Palo mulato o copal", funcion: "Diversas especies presentes en la flora leñosa local, aportan néctar." },
-                    { nombre: "Acanthocereus fosterianus", cientifico: "Tasajillo de Guerrero", funcion: "Cacto columnar con flores nocturnas para insectos y murciélagos." },
-                    { nombre: "Opuntia fuliginosa", cientifico: "Nopal silvestre", funcion: "Flores amarillas y frutos para una amplia gama de polinizadores." }
+                    { nombre: "Ceiba", cientifico: "Ceiba pentandra", funcion: "Emblematic tree, shade, wildlife refuge, flowers for large pollinators." },
+                    { nombre: "Cacao", cientifico: "Theobroma cacao", funcion: "Constant flowering, food for bees and pollinating bats." },
+                    { nombre: "Guayacan", cientifico: "Tabebuia spp.", funcion: "Showy flowering, attracts bees and hummingbirds." },
+                    { nombre: "Mango", cientifico: "Mangifera indica", funcion: "Fruit tree, flowers and fruits attractive to wildlife and pollinators." },
+                    { nombre: "Tzalam", cientifico: "Lysiloma latisiliquum", funcion: "Nitrogen fixer, shade, nectar source for bees." }
                 ]
             },
             sotobosque: {
-                titulo: "Sotobosque (Arbustos y Herbáceas Locales)",
-                beneficios: "Aportan nectarios, protegen la humedad del suelo y atraen polinizadores especializados.",
+                titulo: "Understory Layer – Shrubs and herbaceous plants",
+                beneficios: "Floral diversity, shelter for specialized pollinators and butterflies, staggered flowering.",
                 especies: [
-                    { nombre: "Especies de Malvaceae", cientifico: "Familia del hibisco", funcion: "Grupo de plantas con diversidad de flores atractivas para insectos." },
-                    { nombre: "Bromeliáceas endémicas", cientifico: "Flora epífita y terrestre", funcion: "Reservorios de agua y néctar, crean microclimas húmedos." },
-                    { nombre: "Arbustos florales locales", cientifico: "", funcion: "Selección de flora nativa con floración escalonada." }
+                    { nombre: "Chiapas Sage", cientifico: "Salvia chiapensis", funcion: "Flowering for local hummingbirds and bees." },
+                    { nombre: "Jungle Geranium", cientifico: "Ixora coccinea", funcion: "Attracts pollinators, long-lasting flowering." },
+                    { nombre: "Hibiscus", cientifico: "Hibiscus rosa-sinensis", funcion: "Showy flowering, nectar for bees and hummingbirds." },
+                    { nombre: "Heliconia", cientifico: "Heliconia spp.", funcion: "Tubular flowers, important for hummingbirds." },
+                    { nombre: "Achiote", cientifico: "Bixa orellana", funcion: "Prolonged flowering, useful seeds, attracts insects." }
                 ]
             },
             coberturaSuelo: {
-                titulo: "Cobertura del Suelo (Plantas Rastreras y Suculentas)",
-                beneficios: "Excelente adaptación a la sequía, conservan la humedad y previenen la erosión.",
+                titulo: "Ground Cover – Grasses and creeping flowers",
+                beneficios: "Soil protection, moisture retention, stable microclimate.",
                 especies: [
-                    { nombre: "Plantas suculentas", cientifico: "", funcion: "Bajo consumo de agua y flores atractivas para insectos pequeños." },
-                    { nombre: "Bromeliáceas terrestres", cientifico: "", funcion: "Cubren el suelo, conservan la humedad y ofrecen refugio." }
+                    { nombre: "Marigold", cientifico: "Tagetes erecta", funcion: "Natural pest control, attracts pollinators." },
+                    { nombre: "Native Sunflower", cientifico: "Helianthus annuus var. mexicanus", funcion: "Abundant pollen and nectar, visited by bees." },
+                    { nombre: "Purslane", cientifico: "Portulaca oleracea", funcion: "Edible, flowering for small bees." },
+                    { nombre: "Spearmint", cientifico: "Mentha spp.", funcion: "Attractive to bees, natural pest repellent." },
+                    { nombre: "Zinnia", cientifico: "Mexican wild flower", funcion: "Long-lasting flower, pollinated by bees and butterflies." }
                 ]
             },
             polinizadores: {
-                titulo: "Polinizadores Clave en Guerrero",
+                titulo: "Key Pollinators in Chiapas",
                 especies: [
-                    { nombre: "Scaptotrigona hellwegeri", cientifico: "Abeja 'cucu de mamey'", rol: "Abeja sin aguijón nativa, clave para la meliponicultura local." },
-                    { nombre: "Colibríes", cientifico: "Trochilidae spp.", rol: "Polinizadores esenciales para flores tubulares de la región." },
-                    { nombre: "Abejas y otros insectos", cientifico: "", rol: "Asociados a la abundante flora leñosa y cactácea." }
+                    { nombre: "Melipona Bee", cientifico: "Melipona beecheii", rol: "Native stingless bee, efficient pollinator of tropical crops." },
+                    { nombre: "European Honey Bee", cientifico: "Apis mellifera", rol: "Generalist pollinator." },
+                    { nombre: "Local Hummingbirds", cientifico: "Trochilidae spp.", rol: "Pollinators of tubular flowers and heliconias." },
+                    { nombre: "Blue Morpho Butterfly", cientifico: "Morpho peleides", rol: "Occasional pollinator, indicator of ecosystem health." }
                 ]
             },
             auxiliares: {
-                titulo: "Insectos Auxiliares",
+                titulo: "Beneficial Insects",
                 especies: [
-                    { nombre: "Mariquitas, Crisopas, etc.", cientifico: "", funcion: "Presentes en ecosistemas saludables para el control biológico de plagas." }
+                    { nombre: "Ladybugs", cientifico: "Coccinellidae", funcion: "Biological control of aphids and mites." },
+                    { nombre: "Lacewings", cientifico: "Chrysopidae", funcion: "Predators of agricultural pests." },
+                    { nombre: "Dung Beetles", cientifico: "", funcion: "Nutrient recycling and soil improvement." }
                 ]
             },
             infraestructura: {
-                titulo: "Infraestructura Adicional Adaptada",
+                titulo: "Additional Infrastructure",
                 elementos: [
-                    "<strong>Hoteles de insectos:</strong> Construidos con madera nativa y adaptados a especies locales.",
-                    "<strong>Captación de agua:</strong> Especialmente importante para la temporada seca de la región.",
-                    "<strong>Compostaje:</strong> Con el residuo vegetal de la flora local adaptada a la sequía."
+                    "<strong>Insect hotel:</strong> Drilled logs, reeds, and clay.",
+                    "<strong>Water harvesting system:</strong> Gutters and cistern for constant humidity.",
+                    "<strong>Composting area:</strong> Use of pruning and agricultural waste."
+                ]
+            }
+        }
+    },
+    "Guerrero": {
+        modelSrc: "modelos/isla_guerrero.glb",
+        infoCompleta: {
+            titulo: "Pollinator Island Proposal – Guerrero",
+            contexto: {
+                ubicacion: "Guerrero, Mexico.",
+                climas: "Low deciduous forests, temperate forests, mangroves, and thorny scrublands.",
+                usosAgricolas: "Corn, agave, coffee, tropical fruits, and vegetables.",
+                reto: "Protect biodiversity, improve drought resilience, and diversify agriculture."
+            },
+            dosel: {
+                titulo: "Canopy (Native Trees, Shrubs, and Cacti)",
+                beneficios: "Drought resilience, carbon capture, flowers and fruits for adapted pollinators.",
+                especies: [
+                    { nombre: "Hairy Calliandra", cientifico: "Calliandra hirsuta", funcion: "Woody shrub with showy flowers that attract hummingbirds and bees." },
+                    { nombre: "Copal", cientifico: "Bursera spp.", funcion: "Various species present in the local woody flora, provide nectar." },
+                    { nombre: "Guerrero's Tasajillo", cientifico: "Acanthocereus fosterianus", funcion: "Columnar cactus with nocturnal flowers for insects and bats." },
+                    { nombre: "Prickly Pear", cientifico: "Opuntia fuliginosa", funcion: "Yellow flowers and fruits for a wide range of pollinators." }
+                ]
+            },
+            sotobosque: {
+                titulo: "Understory (Local Shrubs and Herbaceous Plants)",
+                beneficios: "Provide nectaries, protect soil moisture, and attract specialized pollinators.",
+                especies: [
+                    { nombre: "Malvaceae species", cientifico: "Hibiscus family", funcion: "Group of plants with a diversity of flowers attractive to insects." },
+                    { nombre: "Endemic Bromeliads", cientifico: "Epiphytic and terrestrial flora", funcion: "Water and nectar reservoirs, create humid microclimates." },
+                    { nombre: "Local flowering shrubs", cientifico: "", funcion: "Selection of native flora with staggered flowering." }
+                ]
+            },
+            coberturaSuelo: {
+                titulo: "Ground Cover (Creeping Plants and Succulents)",
+                beneficios: "Excellent adaptation to drought, conserve moisture, and prevent erosion.",
+                especies: [
+                    { nombre: "Succulent plants", cientifico: "", funcion: "Low water consumption and attractive flowers for small insects." },
+                    { nombre: "Terrestrial Bromeliads", cientifico: "", funcion: "Cover the ground, conserve moisture, and offer shelter." }
+                ]
+            },
+            polinizadores: {
+                titulo: "Key Pollinators in Guerrero",
+                especies: [
+                    { nombre: "Scaptotrigona hellwegeri", cientifico: "'Mamey's Cucu' Bee", rol: "A native stingless bee crucial for local crops." }
                 ]
             }
         }
     }
 };
+
 
     // Función que se ejecuta al hacer clic en un botón
     function updateDisplay(state) {
