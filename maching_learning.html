@@ -12,7 +12,7 @@
       padding: 30px;
     }
 
-    h1 {
+    h1, h2{
       color: #2b6777;
     }
 
@@ -67,8 +67,9 @@
         align-items: center;
     }
 
-    #MFlora, #MPolinizadores {
+    #MFlora, #Mpollinators {
         display: none; 
+        padding: 5%;
     }
   </style>
 </head>
@@ -76,20 +77,20 @@
 
     <div>
         <button onclick="mostrarFlora()">Flora</button>
-        <button onclick="mostrarPolinizadores()">Polinizadores</button>
+        <button onclick="mostrarpollinators()">pollinators</button>
     </div>
 
-    <div id="MPolinizadores">
-        <h1>Polinizadores con tus condiciones climáticas</h1>
+    <div id="Mpollinators">
+        <h1>Look for pollinators with your climate conditions</h1>
     
         <div class="input-container">
-            <label>Temperatura promedio (°C):</label><br>
+            <label>Average temperature (°C):</label><br>
             <input type="number" id="temperaturaPol" step="0.1"><br>
     
-            <label>Altitud promedio (m):</label><br>
+            <label>Average altitude (m):</label><br>
             <input type="number" id="altitudPol" step="1"><br>
     
-            <button onclick="solicitarPrediccionPolinizadores()">Predecir Polinizadores</button>
+            <button onclick="solicitarPrediccionpollinators()">Predict pollinators</button>
         </div>
     
         <div id="grafPol">
@@ -98,19 +99,19 @@
     </div>
     
     <div id="MFlora">
-        <h1>Flora con tus condiciones climáticas</h1>
+        <h1>Look for flora with your climatic conditions</h1>
     
         <div class="input-container">
-            <label>Temperatura promedio (°C):</label><br>
+            <label>Average temperature (°C):</label><br>
             <input type="number" id="temperaturaFlora" step="0.1"><br>
     
-            <label>Humedad (%):</label><br>
+            <label>humidity (%):</label><br>
             <input type="number" id="humedadFlora" step="0.1"><br>
     
-            <label>Altitud promedio (m):</label><br>
+            <label>Average altitude  (m):</label><br>
             <input type="number" id="altitudFlora" step="1"><br>
     
-            <button onclick="solicitarPrediccionFlora()">Predecir Flora</button>
+            <button onclick="solicitarPrediccionFlora()">Predict flora</button>
         </div>
     
         <div id="grafFlora">
@@ -118,13 +119,20 @@
         </div>
     </div>
     
+    <h2>Demo video</h2>
+
+    <div style="margin: 2rem;">
+        <video src="videos/video_ML.webm" width="50%" controls></video>
+    </div>
+
+    
 <script>
 // --- INICIO DE LA MODIFICACIÓN ---
 
 // Ya no necesitamos las constantes de IP y Puerto en el frontend.
 // Las hemos movido a los archivos del proxy en la carpeta /api.
 
-async function solicitarPrediccionPolinizadores() {
+async function solicitarPrediccionpollinators() {
     const temp = document.getElementById("temperaturaPol").value;
     const alt = document.getElementById("altitudPol").value;
 
@@ -195,16 +203,16 @@ async function solicitarPrediccionFlora() {
 
 function mostrarFlora() {
     document.getElementById("MFlora").style.display = "block";        
-    document.getElementById("MPolinizadores").style.display = "none"; 
+    document.getElementById("Mpollinators").style.display = "none"; 
 }
 
-function mostrarPolinizadores() {
-    document.getElementById("MPolinizadores").style.display = "block"; 
+function mostrarpollinators() {
+    document.getElementById("Mpollinators").style.display = "block"; 
     document.getElementById("MFlora").style.display = "none";          
 }
 
 window.onload = () => {
-    mostrarPolinizadores();
+    mostrarpollinators();
 }
 
 // --- FIN DE LA MODIFICACIÓN ---
