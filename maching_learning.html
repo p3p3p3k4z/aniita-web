@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Predicción de Flora Endémica</title>
+  <title>Predicción de Flora y Polinizadores</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -54,7 +54,7 @@
       color: #333;
     }
 
-    #grafica {
+    #grafPol img, #grafFlora img {
       margin-top: 20px;
       max-width: 80%;
       border-radius: 10px;
@@ -70,7 +70,6 @@
     #MFlora, #MPolinizadores {
         display: none; 
     }
-
   </style>
 </head>
 <body>
@@ -120,8 +119,10 @@
     </div>
     
 <script>
-const SERVER_IP = "192.100.170.152"; // IP del servidor donde corre FastAPI
-const SERVER_PORT = "8040";
+// --- INICIO DE LA MODIFICACIÓN ---
+
+// Ya no necesitamos las constantes de IP y Puerto en el frontend.
+// Las hemos movido a los archivos del proxy en la carpeta /api.
 
 async function solicitarPrediccionPolinizadores() {
     const temp = document.getElementById("temperaturaPol").value;
@@ -133,13 +134,16 @@ async function solicitarPrediccionPolinizadores() {
     }
 
     try {
-        // Predicción sin gráfica
-        const respPred = await fetch(`http://${SERVER_IP}:${SERVER_PORT}/polinizadores/?temperatura=${temp}&altitud=${alt}&grafica=false`);
+        // CAMBIO: La URL ahora apunta a nuestro proxy de Vercel.
+        const urlBase = `/api/polinizadores?temperatura=${temp}&altitud=${alt}`;
+
+        // Predicción sin gráfica (opcional, si aún la necesitas en consola)
+        const respPred = await fetch(`${urlBase}&grafica=false`);
         const dataPred = await respPred.json();
         console.log("Polinizadores predichos:", dataPred);
 
         // Predicción con gráfica
-        const respPlot = await fetch(`http://${SERVER_IP}:${SERVER_PORT}/polinizadores/?temperatura=${temp}&altitud=${alt}&grafica=true`);
+        const respPlot = await fetch(`${urlBase}&grafica=true`);
         const blob = await respPlot.blob();
         const url = URL.createObjectURL(blob);
         const grafica = document.getElementById("graficaPol");
@@ -148,7 +152,9 @@ async function solicitarPrediccionPolinizadores() {
 
     } catch (error) {
         console.error("Error al solicitar predicción:", error);
-        document.getElementById("resultado").innerText = "Error al conectarse al servidor.";
+        // Nota: Tu HTML no tiene un elemento con id="resultado", por lo que la siguiente línea daría error. La comento.
+        // document.getElementById("resultado").innerText = "Error al conectarse al servidor.";
+        alert("Error al conectarse al servidor de predicción.");
     }
 }
 
@@ -163,13 +169,16 @@ async function solicitarPrediccionFlora() {
     }
 
     try {
-        // Predicción flora sin gráfica
-        const respPred = await fetch(`http://${SERVER_IP}:${SERVER_PORT}/floraEndemica/?temperatura=${temp}&humedad=${hum}&altitud=${alt}&grafica=false`);
+        // CAMBIO: La URL ahora apunta a nuestro proxy de Vercel.
+        const urlBase = `/api/flora?temperatura=${temp}&humedad=${hum}&altitud=${alt}`;
+        
+        // Predicción flora sin gráfica (opcional)
+        const respPred = await fetch(`${urlBase}&grafica=false`);
         const dataPred = await respPred.json();
         console.log("Flora predicha:", dataPred);
 
         // Predicción flora con gráfica
-        const respPlot = await fetch(`http://${SERVER_IP}:${SERVER_PORT}/floraEndemica/?temperatura=${temp}&humedad=${hum}&altitud=${alt}&grafica=true`);
+        const respPlot = await fetch(`${urlBase}&grafica=true`);
         const blob = await respPlot.blob();
         const url = URL.createObjectURL(blob);
         const grafica = document.getElementById("graficaFlora");
@@ -178,7 +187,9 @@ async function solicitarPrediccionFlora() {
 
     } catch (error) {
         console.error("Error al solicitar predicción:", error);
-        document.getElementById("resultado").innerText = "Error al conectarse al servidor.";
+        // Nota: Tu HTML no tiene un elemento con id="resultado", por lo que la siguiente línea daría error. La comento.
+        // document.getElementById("resultado").innerText = "Error al conectarse al servidor.";
+        alert("Error al conectarse al servidor de predicción.");
     }
 }
 
@@ -195,6 +206,8 @@ function mostrarPolinizadores() {
 window.onload = () => {
     mostrarPolinizadores();
 }
+
+// --- FIN DE LA MODIFICACIÓN ---
 </script>
 
 </body>
