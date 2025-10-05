@@ -1,96 +1,535 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nahual Code - Sistema de Polinizadores</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+<!doctype html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+       <meta name="description" content="">
+       <meta name="author" content="">
+ 
+       <title>Añi Ita</title>
+ 
+       <!-- CSS FILES -->                
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+      
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+          
+       <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+       <link href="css/bootstrap-icons.css" rel="stylesheet">
+ 
+       <link href="css/vegas.min.css" rel="stylesheet">
+ 
+       <link href="css/tooplate-barista.css" rel="stylesheet">
 
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background: linear-gradient(135deg, #2e8b57, #1e3c72);
-      color: #fff;
-      text-align: center;
-    }
+       <style>
+            #section_4 {
+             background-image: url("images/baile.jpg");
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+            }
+       </style>
+      
+<!--
+ 
+Tooplate 2137 Barista Cafe
+ 
+https://www.tooplate.com/view/2137-barista-cafe
+ 
+Bootstrap 5 HTML CSS Template
+ 
+-->
+   
+<style>
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #111;
+    color: #f4f4f4;
+}
 
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
+/* Secciones */
+section {
+    padding: 80px 0;
+}
 
-    button {
-      background: #ffd166;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
-      transition: all 0.3s ease;
-    }
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #fff;
+}
 
-    button:hover {
-      background: #fcbf49;
-      transform: scale(1.05);
-    }
+/* Párrafos */
+p {
+    color: #ddd;
+    line-height: 1.6;
+}
 
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
+/* Botones */
+.custom-btn, button, .btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    background-color: #a2cf4e;
+    border: none;
+    color: #fff !important;
+}
+.custom-btn:hover, button:hover, .btn:hover {
+    background-color: #a2cf4e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-    /* Animación de entrada */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
+/* Tarjetas / bloques */
+.menu-block, .reviews-block {
+    background: rgba(0,0,0,0.55);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+.menu-block:hover, .reviews-block:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes */
+img {
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+/* Animaciones de entrada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+    to {
         opacity: 1;
         transform: translateY(0);
-      }
     }
+}
 
-    .container {
-      animation: fadeInUp 1s ease forwards;
-    }
-  </style>
+</style>
+
 </head>
-<body>
-  <div class="container">
-    <h1>Bienvenido a añi ita</h1>
-    <p>
-      Plataforma interactiva dedicada al estudio de suelos, polinizadores y agricultura sostenible.  
-      Descubre cómo la tecnología y la naturaleza pueden coexistir para mejorar nuestro planeta 🌎.
-    </p>
-    <button onclick="window.location.href='dashboard.html'">
-      Entrar al Sistema
-    </button>
-  </div>
+  
+   <body>
+              
+           <main>
+             <nav class="navbar navbar-expand-lg">                
+                    <div class="container">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html">
+                            <img src="images/logo.png" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
+                            Añi Ita
+                        </a>
+        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-lg-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                </li>
 
-  <footer>
-    © 2025 Nahual Code · Todos los derechos reservados
-  </footer>
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_2">About Añi Ita</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_3">Pollinators</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_4">Flora</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+
+                 <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-12 mx-auto mt-4">
+                                <h1 class="text-white mb-4">Añi Ita</h1>
+                                <h5 class="background-color mb-4">Instead of displacing, preserving.</h5>
+                                <a class="custom-btn custom-border-btn btn" href="dashboard.html">Start Exploring</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slides"></div>
+                </section>
+ 
+ 
+               <section class="about-section section-padding2" id="section_2">
+                   <div class="section-overlay"></div>
+                   <div class="container">  
+                           <div class="row align-items-top" >
+                           <h2 class="text-white mb-3 mt-0">About Añi Ita</h2>
+
+                           <div class="col-lg-6 col-12">
+                               <div class="ratio ratio-1x1">
+                                   <div class="video-wrap">
+                                           <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                                               <source src="videos/maiz.mp4" type="video/mp4">
+                                               Your browser does not support the video tag.
+                                           </video>
+                                       </div>
+                               </div>
+                           </div>
+                              
+                           <div class="col-lg-5 col-12 mt-0 mt-lg-0 mx-auto">
+                               <p class="mb-3 mt-5" style="font-weight: bold; color: #f5ce5e;">Harvesting food, cultivating life.</p>
+                               <p class="text-white">The Añi Ita project (Soul of the Flower, in Mixtec) is the master plan for creating a national network of Active Ecological Infrastructure. The "Pollinator Islands" are not just patches of flowers; they are strategically designed bioproductivity engines integrated into productive landscapes, adapted to the region to generate a virtuous cycle.</p>
+                               <p class="text-white">Furthermore, Añi Ita integrates data science, ecological knowledge, and accessible technology to support the large-scale implementation of these solutions.</p>
+                            </div>
+                       </div>
+                   </div>
+               </section>
+
+               <section class="about-section section-padding3" id="section_2_1">
+                    <div class="section-overlay"></div>
+                    <div class="container">  
+                        <div class="row align-items-top">
+                            <h2 class="text-white mt-0 mb-3">The Problem</h2>
+
+                            <div class="col-lg-5 col-12 mt-4 mx-0">
+                                <p class="text-white">We face a brutal paradox: to feed a growing population, industrial agriculture has drained the land of life. Each hectare of monoculture, though productive in the short term, becomes a desert for pollinators, unbalances the ecosystem, degrades the soil, and makes us dependent on chemical inputs.</p>
+                                <p class="text-white">This dependency is a strategy that leads us toward food insecurity and ecological collapse, sacrificing long-term resilience for short-term efficiency. The solution is not to stop agriculture but to reinvent it by restoring fundamental ecological interactions.</p>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="ratio ratio-1x1">
+                                    <div class="video-wrap">
+                                            <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                                                <source src="videos/colibri.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+             <section class="menu-section section-padding" id="section_3" style="background-image: url('images/campo.jpg'); 
+             background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="container" style="margin-bottom: 1rem;">
+                    <div class="row">
+
+                           <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                               <h2 class="text-white">Main Flora of the Country</h2>
+                           </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/dalia.jpg" 
+                                        class="img-fluid rounded" 
+                                        alt="Dalia"
+                                        loading="lazy"
+                                        width="350" 
+                                        height="250">
+                                </div>
+
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Dahlia campanulata</h6>
+                                    <p style="color: white;">This flower is native to the states of Oaxaca and Guerrero. Its distinctive bell shape and petals that curve outwards and downwards make it unique within the dahlia family. It generally blooms from summer to early autumn, bringing color and life to the spaces where it is found.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/salvia.jpg" 
+                                        class="img-fluid rounded" 
+                                        alt="Salvia"
+                                        loading="lazy"
+                                        width="350" 
+                                        height="250">
+                                </div>
+
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Salvia mexicana</h6>
+                                    <p style="color: white;">Mexican sage, known for its showy flowering and ability to attract pollinators, is a ruderal plant favored by disturbance, so it is common to find it on roadsides or cultivated fields. It is natively distributed from the northwest to the south of Mexico, in mixed forests and grasslands.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/ocelote.jpg" 
+                                        class="img-fluid rounded" 
+                                        alt="Flor de ocelote"
+                                        loading="lazy">
+                                </div>
+
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Flor de ocelote</h6>
+                                    <p style="color: white;">The Tigridia pavonia plant, also known as Oceloxóchitl in Nahuatl, which means "ocelot flower" or "tiger flower," is prized for its showy, vibrantly colored flowers that, despite lasting only one day, feature spots or tiger-like patterns inside, from which it gets its name.</p>
+                                </div>
+                            </div>
+                        </div>           
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/cempa.jpeg" 
+                                        class="img-fluid rounded" 
+                                        alt="Cempasúchil"
+                                        loading="lazy"
+                                        width="350" 
+                                        height="250">
+                                </div>
+
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Cempasúchil</h6>
+                                    <p style="color: white;">The cempasúchil or flower of the dead, used in the Day of the Dead celebrations, is an iconic flower of Mexico. It is believed that its vibrant color and aroma attract pollinators like butterflies and bees. Pollination is crucial for seed production, ensuring its proliferation each season.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/magnolia.jpg" 
+                                        class="img-fluid rounded" 
+                                        alt="Magnolia"
+                                        loading="lazy">
+                                </div>
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Magnolia pacífica</h6>
+                                    <p style="color: white;">The Pacific Magnolia is a tree native to Mexico, growing in Sinaloa, Nayarit, and Jalisco. Its wood is used in carpentry, and its flower has uses in traditional medicine to treat heart problems. It is endangered due to habitat loss from deforestation and land-use change.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+                            <div class="menu-block-wrap w-100 mt-4">
+                                <div class="menu-block-image-wrap">
+                                    <img src="images/ahue.jpeg" 
+                                        class="img-fluid rounded" 
+                                        alt="Ahuehuete"
+                                        loading="lazy">
+                                </div>
+                                <div class="menu-block">
+                                    <h6 class="mb-2">Ahuehuete</h6>
+                                    <p style="color: white;">Also known as sabino or Mexican cypress, it is one of the most emblematic trees in Mexico. Its name in Nahuatl means "old man of the water," as it grows near rivers, springs, and bodies of water. Today it is protected for its ecological and cultural value.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+ 
+
+            <section class="menu-section section-padding" id="section_4" style="background-image: url('images/fondo1.png'); 
+             background-size: cover; background-position: center; background-repeat: no-repeat;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <h2 class="text-center mb-4" style="color: chartreuse;">Mexico's Pollinators: Nature's Little Heroes</h2>
+                               <a-5">
+                               <p class="mb-3 mt-5" style="font-weight: bold; color: black;">
+                                    Pollinators are essential for plant reproduction, as they transport pollen between flowers, allowing new fruits and seeds to grow. It is estimated that 90% of flowering plants depend on them.
+                               </p>
+                                </p>
+                            </div>
+
+
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="reviews-block h-100">
+                                <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="images/abeja.jpeg" 
+                                        class="img-fluid rounded" 
+                                        alt="Abeja"
+                                        loading="lazy"
+                                        width="200" 
+                                        height="120">
+                                    </div>
+                                    <div class="ms-4">
+                                        <h4 class="mb-2 text-white">Bees</h4>
+                                        <div class="reviews-block-body">
+                                            <p class="text-light">Bees, in all their forms, provide us with products like honey, pollen, and wax. They are fundamental to our diet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+     
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="reviews-block h-100">
+                                <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="images/abejas_sin.jpg" 
+                                        class="img-fluid rounded" 
+                                        alt="Abeja sin aguijón"
+                                        loading="lazy"
+                                        width="200" 
+                                        height="120">
+                                    </div>
+                                <div class="ms-4">
+                                    <h4 class="mb-2 text-white">Stingless Bees</h4>
+                                    <div class="reviews-block-body">
+                                        <p class="text-light">These bees, like Scaptotrigona mexicana, use chemical and thermal signals to call their companions to new food sources.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mb-4">
+                        <div class="reviews-block h-100">
+                            <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="images/mariposa.jpeg" 
+                                    class="img-fluid rounded" 
+                                    alt="Mariposas"
+                                    loading="lazy"
+                                    width="200" 
+                                    height="170">
+                                </div>
+                            <div class="ms-4">
+                                <h4 class="mb-2 text-white">Butterflies</h4>
+                                <div class="reviews-block-body">
+                                    <p class="text-light">They are mainly active during the day and help pollinate many plants, contributing to the biodiversity of the flora.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+    
+                <div class="col-lg-6 col-12 mb-4">
+                    <div class="reviews-block h-100">
+                        <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <img src="images/polilla.jpeg" 
+                                 class="img-fluid rounded" 
+                                 alt="Polilla"
+                                 loading="lazy"
+                                 width="200" 
+                                 height="120">
+                            </div>
+                        <div class="ms-4">
+                            <h4 class="mb-2 text-white">Moths</h4>
+                            <div class="reviews-block-body">
+                                <p class="text-light">Although some species, like the black witch moth, are associated with myths related to death, their true role is to pollinate night-blooming plants, being essential for the balance of many ecosystems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12 mb-4">
+                <div class="reviews-block h-100">
+                    <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                        <div class="flex-shrink-0">
+                            <img src="images/murcielago.jpg" 
+                                 class="img-fluid rounded" 
+                                 alt="Murcielago"
+                                 loading="lazy"
+                                 width="200" 
+                                 height="150">
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="mb-2 text-white">Bats</h4>
+                            <div class="reviews-block-body">
+                                <p class="text-light">Agave-visiting bats, which can live up to 12 years, are key pollinators, especially for nocturnal plants.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-lg-6 col-12 mb-4">
+                <div class="reviews-block h-100">
+                    <div class="reviews-block-title-wrap d-flex align-items-center mb-3">
+                        <div class="flex-shrink-0">
+                            <img src="images/colibri.webp" 
+                                 class="img-fluid rounded" 
+                                 alt="Colibrí"
+                                 loading="lazy"
+                                 width="200" 
+                                 height="120">
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="mb-2 text-white">Hummingbirds</h4>
+                            <div class="reviews-block-body">
+                                <p class="text-light">These tiny, agile birds not only fly forwards and backward but also consume their weight in nectar every day, contributing to the pollination of many flowers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+               <section class="contact-section section-padding" id="section_5">
+                   <div class="container">
+                       <div class="row">  
+                         <div class="col-lg-12 col-12 text-center mx-auto">
+                            <h2 class="mb-4">Our Team</h2>
+                        </div>
+                           <div class="col-lg-12 col-12">
+                               <p class="text-white mb-4 pb-lg-2">At Añi Ita, we believe that changing the world begins with people committed to the land, science, and life. Our team is made up of curious minds, hands that sow, and hearts that believe in a regenerative future.</p>
+                               <p>Mario Enrique Ramírez Gallardo</p>
+                               <p>Irving Tristán Pérez Zurita</p>
+                               <p>Pedro Cruz López</p>
+                               <p>Christian Gregorio López Jiménez</p>
+                               <p>Fátima Cruz Guerrero</p>
+                           </div>
+                       </div>
+                   </div>
+               </section>
+ 
+ 
+               <footer class="site-footer">
+                   <div class="container">
+                       <div class="row">
+ 
+                           <div class="col-lg-4 col-12 me-auto">
+                               <em class="text-white d-block mb-4">Want more information or to join the project?</em>
+                               
+                               <p class="d-flex">
+                                <strong class="me-2">Email:</strong>
+
+                                <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                                    mario.ness64@gmail.com
+                                </a>
+                            </p>
+                        </div>
+                   </div>
+               </footer>
+           </main>
+ 
+       <!-- JAVASCRIPT FILES -->
+       <script src="js/jquery.min.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+       <script src="js/jquery.sticky.js"></script>
+       <script src="js/click-scroll.js"></script>
+       <script src="js/vegas.min.js"></script>
+       <script src="js/custom.js"></script>
+
 </body>
 </html>

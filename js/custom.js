@@ -11,9 +11,9 @@
     $(function() {
       $('.hero-slides').vegas({
           slides: [
-              { src: 'images/courtney-cook-QRVSQH7OeX4-unsplash.jpg' },
-              { src: 'images/pexels-mike-van-schoonderwalt-1884800-5484600.jpg' },
-              { src: 'images/calacas.webp' }
+              { src: 'images/ima1.jpg' },
+              { src: 'images/ima2.jpg' },
+              { src: 'images/ima3.jpg' }
           ],
           timer: false,
           animation: 'kenburns',
