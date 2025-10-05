@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bee Mode - Pollinator Island of Chiapas</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <style>
+        #start-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="start-overlay">
+        <div>
+            <h1>Explore Guerrero Island</h1>
+            <p>Click on the screen to start</p>
+        </div>
+    </div>
+
+    <a-scene background="color: #ECEFF1">
+
+        <a-assets>
+            <a-asset-item id="chiapas-model" src="modelos/isla_chiapas.glb"></a-asset-item>
+        </a-assets>
+
+        <a-sky color="#87CEEB"></a-sky> 
+        <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow="receive: true"></a-plane>
+        <a-light type="ambient" color="#AAA"></a-light>
+        <a-light type="directional" color="#FFF" intensity="1.0" position="-1 2 2" castShadow="true"></a-light>
+
+        <a-gltf-model 
+            id="island-model" 
+            src="#chiapas-model" 
+            scale="0.8 0.8 0.8" 
+            position="0 0.1 0"
+            shadow="cast: true">
+        </a-gltf-model>
+
+        <a-entity id="player" position="0 30 25" universal-controls wasd-controls="fly: true; acceleration: 30">
+            <a-entity 
+                camera="near: 0.01" 
+                rotation="-45 0 0"
+                look-controls="pointerLockEnabled: true">
+                <a-cursor></a-cursor> 
+            </a-entity>
+        </a-entity>
+        
+    </a-scene>
+
+    <script>
+        const startOverlay = document.querySelector('#start-overlay');
+        const scene = document.querySelector('a-scene');
+
+        startOverlay.addEventListener('click', () => {
+            startOverlay.style.display = 'none';
+            // Al hacer clic, le pedimos a la escena que bloquee el puntero (para los controles)
+            scene.canvas.requestPointerLock();
+        });
+    </script>
+</body>
+</html>
