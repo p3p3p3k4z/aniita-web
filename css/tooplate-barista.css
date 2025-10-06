@@ -1213,3 +1213,27 @@ strong {
   }
 }
 
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: #a3e635; 
+}
+
+
+.team-member {
+  font-size: 1.6rem;             
+  font-weight: 600;              
+  color: #ffffff;                
+  margin-bottom: 0.8rem;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); 
+  transition: all 0.3s ease;     
+}
+
+
+.team-member:hover {
+  color: #a3e635;                
+  transform: scale(1.03);        
+  text-shadow: 0 0 10px rgba(163, 230, 53, 0.6);
+  cursor: default;
+}
