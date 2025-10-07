@@ -108,6 +108,24 @@ img {
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
 }
+
+.team-member {
+    margin-bottom: 1.75rem; /* Espacio entre cada integrante */
+}
+
+.team-member-name {
+    font-size: 1.1rem; /* Tamaño de letra mediano */
+    font-weight: 600;  /* Letra en negritas (semi-bold) */
+    color: #ffffff;
+    margin: 0; /* Quitamos el margen por defecto del párrafo */
+}
+
+.team-member-role {
+    font-size: 0.9rem; /* Tamaño de letra pequeño */
+    color: #ced4da; /* Un gris claro para diferenciarlo del nombre */
+    font-style: italic; /* Un toque de estilo adicional */
+}
+
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -155,6 +173,14 @@ img {
                                     <a class="nav-link click-scroll" href="#section_5">Contact</a>
                                 </li>
                             </ul>
+
+                             <div class="ms-lg-3">
+                                <a class="btn custom-btn custom-border-btn" href="dashboard.html">
+                                    Discover the Project
+                                    <i class="bi-arrow-up-right ms-2"></i>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </nav>
@@ -167,7 +193,7 @@ img {
                             <div class="col-lg-6 col-12 mx-auto mt-4">
                                 <h1 class="text-white mb-4">Añi Ita</h1>
                                 <h5 class="background-color mb-4">Instead of displacing, preserving.</h5>
-                                <a class="custom-btn custom-border-btn btn" href="dashboard.html">Start Exploring</a>
+                                <a class="custom-btn custom-border-btn btn" href="dashboard.html">Click here to enter the project</a>
                             </div>
                         </div>
                     </div>
@@ -486,44 +512,138 @@ img {
 </section>
 
 <section id="section_5" class="contact-section section-padding bg-dark text-light">
-  <div class="container py-5">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-8">
-        <h2 class="fw-bold mb-3 text-uppercase">Our Team</h2>
-        <div class="divider mx-auto mb-4"></div>
 
-        <p class="lead mb-5 text-white">
-          At <strong>Añi Ita</strong>, we believe that changing the world begins with people committed 
-          to the land, science, and life. Our team is made up of curious minds, hands that sow, and 
-          hearts that believe in a regenerative future.
-        </p>
+    <style>
+        .team-card {
+            background-color: #212529; /* Un gris un poco más claro que el fondo */
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border-left: 3px solid #a2cf4e; /* Acento de color de tu marca */
+        }
 
-        <img 
-          src="images/equipo.jpg" 
-          class="img-fluid rounded-4 shadow-lg mx-auto d-block mb-5" 
-          alt="Equipo Añi Ita"
-          loading="lazy"
-          width="700"
-          height="400"
-        />
-<div class="team-members">
-  <ul class="list-unstyled mb-0">
-    <li class="team-member">Mario Enrique Ramírez Gallardo — Full Stack Developer | Linux Enthusiast</li>
-    <li class="team-member">Irving Tristán Pérez Zurita — Full Stack Developer | 3D Designer</li>
-    <li class="team-member">Pedro Cruz López — Full Stack Developer - IA Developer</li>
-    <li class="team-member">Christian Gregorio López Jiménez — Data Analyst | Backend Developer</li>
-    <li class="team-member">Fátima Cruz Guerrero — Frontend Developer | Plastic Artist</li>
-  </ul>
-</div>
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
 
-      </div>
+        .team-card .name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .roles {
+            font-size: 0.9rem;
+            color: #ced4da; /* Texto secundario gris claro */
+            line-height: 1.5;
+        }
+
+        .team-card .roles .separator {
+            margin: 0 0.5rem; /* Espacio a los lados del separador "|" */
+            color: #6c757d; /* Color del separador */
+        }
+    </style>
+
+    <div class="container py-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <h2 class="fw-bold mb-3 text-uppercase">Our Team</h2>
+                <div class="divider mx-auto mb-4" style="width: 100px; height: 3px; background-color: #a2cf4e;"></div>
+
+                <p class="lead mb-5 text-white">
+                    At <strong>Añi Ita</strong>, we believe that changing the world begins with people committed
+                    to the land, science, and life. Our team is made up of curious minds, hands that sow, and
+                    hearts that believe in a regenerative future.
+                </p>
+
+                <img 
+                src="images/equipo.jpg" 
+                class="img-fluid rounded-4 shadow-lg mx-auto d-block mb-5" 
+                alt="Equipo Añi Ita"
+                loading="lazy"
+                width="700"
+                height="400"
+                />
+
+                <div class="row mt-5 text-start">
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="team-card">
+                            <h5 class="name">Mario Enrique Ramírez Gallardo</h5>
+                            <div class="roles">
+                                <span>Full Stack Developer</span>
+                                <span class="separator">|</span>
+                                <span>DevOps & Linux Systems</span>
+                                <span class="separator">|</span>
+                                <span>UI/UX Design & Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="team-card">
+                            <h5 class="name">Irving Tristán Pérez Zurita</h5>
+                            <div class="roles">
+                                <span>Full Stack Developer</span>
+                                <span class="separator">|</span>
+                                <span>Interactive 3D Design</span>
+                                <span class="separator">|</span>
+                                <span>UX/UI Specialist</span>
+                                <span class="separator">|</span>
+                                <span>Prompt Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="team-card">
+                            <h5 class="name">Pedro Cruz López</h5>
+                            <div class="roles">
+                                
+                                <span class="separator">|</span>
+                                <span>Full Stack Engineer</span>
+                                <span class="separator">|</span>
+                                <span>Geospatial & AI Developer</span>
+                                <span class="separator">|</span>
+                                <span>API Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="team-card">
+                            <h5 class="name">Christian Gregorio López Jiménez</h5>
+                            <div class="roles">
+                                <span>Backend Developer</span>
+                                <span class="separator">|</span>
+                                <span>Data Engineering & Analytics</span>
+                                <span class="separator">|</span>
+                                <span>AI & Machine Learning Developer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4 mx-auto">
+                        <div class="team-card">
+                            <h5 class="name">Fátima Cruz Guerrero</h5>
+                            <div class="roles">
+                                <span>Frontend Developer</span>
+                                <span class="separator">|</span>
+                                <span>Web Application Developer</span>
+                                <span class="separator">|</span>
+                                <span>Plastic Artist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
-
-
-
- 
  
                <footer class="site-footer">
                    <div class="container">
