@@ -3,7 +3,7 @@
 const mapData = {
     "Oaxaca": {
         titulo: "Análisis de Vegetación: Oaxaca",
-        interpretacion: "Oaxaca presenta una alta diversidad de vegetación, desde zonas áridas hasta bosques templados. Los índices muestran una salud vegetal robusta en sus valles y sierras, indicando una biomasa activa y buena retención de humedad, clave para su agricultura de café y agave.",
+        interpretacion: "Oaxaca presenta una alta diversidad de vegetación, desde zonas áridas hasta bosques templados. Los índices muestran una salud vegetal robusta en sus valles y sierras, indicando una biomasa activa y buena retención de humedad, clave para su agricultura de café y agave[cite: 5, 8].",
         polinizadoresTitulo: "Polinizadores Principales",
         polinizadores: [
             "Abejas nativas (Melipona)",
@@ -21,7 +21,7 @@ const mapData = {
     },
     "Chiapas": {
         titulo: "Análisis de Vegetación: Chiapas",
-        interpretacion: "La vegetación en Chiapas es exuberante, dominada por selvas húmedas. Los índices reflejan una biomasa densa y constante durante todo el año. La salud de la vegetación es vital para cultivos como el café y el cacao, aunque es un ecosistema sensible a la deforestación.",
+        interpretacion: "La vegetación en Chiapas es exuberante, dominada por selvas húmedas. Los índices reflejan una biomasa densa y constante durante todo el año. [cite_start]La salud de la vegetación es vital para cultivos como el café y el cacao, aunque es un ecosistema sensible a la deforestación[cite: 8].",
         polinizadoresTitulo: "Polinizadores Principales",
         polinizadores: [
             "Abeja melipona (Melipona beecheii)",
@@ -40,7 +40,7 @@ const mapData = {
     },
     "Guerrero": {
         titulo: "Análisis de Vegetación: Guerrero",
-        interpretacion: "Guerrero muestra un contraste entre sus selvas secas y bosques de montaña. La vegetación es resiliente y adaptada a temporadas de sequía. Los índices indican una recuperación rápida tras las lluvias, crucial para el maíz y los frutales tropicales.",
+        interpretacion: "Guerrero muestra un contraste entre sus selvas secas y bosques de montaña. La vegetación es resiliente y adaptada a temporadas de sequía. [cite_start]Los índices indican una recuperación rápida tras las lluvias, crucial para el maíz y los frutales tropicales[cite: 27].",
         polinizadoresTitulo: "Polinizadores Principales",
         polinizadores: [
             "Abeja 'cucu de mamey' (Scaptotrigona)",

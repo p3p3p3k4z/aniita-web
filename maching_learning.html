@@ -77,20 +77,20 @@
 
     <div>
         <button onclick="mostrarFlora()">Flora</button>
-        <button onclick="mostrarpollinators()">pollinators</button>
+        <button onclick="mostrarpollinators()">Polinizadores</button>
     </div>
 
     <div id="Mpollinators">
-        <h1>Look for pollinators with your climate conditions</h1>
+        <h1>Busca polinizadores según tus condiciones climáticas</h1>
     
         <div class="input-container">
-            <label>Average temperature (°C):</label><br>
+            <label>Temperatura promedio (°C):</label><br>
             <input type="number" id="temperaturaPol" step="0.1"><br>
     
-            <label>Average altitude (m):</label><br>
+            <label>Altitud promedio (m):</label><br>
             <input type="number" id="altitudPol" step="1"><br>
     
-            <button onclick="solicitarPrediccionpollinators()">Predict pollinators</button>
+            <button onclick="solicitarPrediccionpollinators()">Predecir polinizadores</button>
         </div>
     
         <div id="grafPol">
@@ -99,19 +99,19 @@
     </div>
     
     <div id="MFlora">
-        <h1>Look for flora with your climatic conditions</h1>
+        <h1>Busca flora según tus condiciones climáticas</h1>
     
         <div class="input-container">
-            <label>Average temperature (°C):</label><br>
+            <label>Temperatura promedio (°C):</label><br>
             <input type="number" id="temperaturaFlora" step="0.1"><br>
     
-            <label>humidity (%):</label><br>
+            <label>Humedad (%):</label><br>
             <input type="number" id="humedadFlora" step="0.1"><br>
     
-            <label>Average altitude  (m):</label><br>
+            <label>Altitud promedio (m):</label><br>
             <input type="number" id="altitudFlora" step="1"><br>
     
-            <button onclick="solicitarPrediccionFlora()">Predict flora</button>
+            <button onclick="solicitarPrediccionFlora()">Predecir flora</button>
         </div>
     
         <div id="grafFlora">
@@ -119,7 +119,7 @@
         </div>
     </div>
     
-    <h2>Demo video</h2>
+    <h2>Video de demostración</h2>
 
     <div style="margin: 2rem;">
         <video src="videos/video_ML.webm" width="50%" controls></video>

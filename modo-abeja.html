@@ -1,75 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Bee Mode - Pollinator Island of Chiapas</title>
+    <title>Modo Abeja - Isla Polinizadora de Chiapas</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
 
     <style>
-        #start-overlay {
+        /* Pantalla de carga mejorada */
+        #loader {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #111;
             color: white;
-            z-index: 10;
+            z-index: 9999;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             font-family: Arial, sans-serif;
-            font-size: 2rem;
-            cursor: pointer;
+            transition: opacity 0.5s;
         }
+        .hidden { opacity: 0; pointer-events: none; }
     </style>
 </head>
 
 <body>
-    <div id="start-overlay">
-        <div>
-            <h1>Explore Guerrero Island</h1>
-            <p>Click on the screen to start</p>
-        </div>
+    <div id="loader">
+        <h1>Cargando Ecosistema...</h1>
+        <p>Por favor espera</p>
     </div>
 
-    <a-scene background="color: #ECEFF1">
+    <a-scene 
+        background="color: #87CEEB" 
+        renderer="antialias: true; colorManagement: true; physicallyCorrectLights: true;"
+        fog="type: exponential; color: #87CEEB; density: 0.002">
 
         <a-assets>
-            <a-asset-item id="chiapas-model" src="modelos/isla_chiapas.glb"></a-asset-item>
+            <a-asset-item id="oaxaca-model" src="modelos/isla_oaxaca.glb"></a-asset-item>
         </a-assets>
 
-        <a-sky color="#87CEEB"></a-sky> 
-        <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow="receive: true"></a-plane>
-        <a-light type="ambient" color="#AAA"></a-light>
-        <a-light type="directional" color="#FFF" intensity="1.0" position="-1 2 2" castShadow="true"></a-light>
+        <a-light type="ambient" color="#BBB" intensity="1.5"></a-light>
+        <a-light type="directional" color="#FFF" intensity="2" position="-1 10 5"></a-light>
+
+        <a-plane position="0 -1 0" rotation="-90 0 0" width="500" height="500" color="#5C4033"></a-plane>
 
         <a-gltf-model 
             id="island-model" 
-            src="#chiapas-model" 
-            scale="0.8 0.8 0.8" 
-            position="0 0.1 0"
-            shadow="cast: true">
+            src="#oaxaca-model" 
+            scale="1 1 1" 
+            position="0 0 0">
         </a-gltf-model>
 
-        <a-entity id="player" position="0 30 25" universal-controls wasd-controls="fly: true; acceleration: 30">
+        <a-entity id="rig" movement-controls="fly: true; speed: 0.5" position="0 5 10">
             <a-entity 
-                camera="near: 0.01" 
-                rotation="-45 0 0"
+                camera 
+                position="0 1.6 0" 
                 look-controls="pointerLockEnabled: true">
-                <a-cursor></a-cursor> 
+                <a-cursor color="yellow" scale="0.5 0.5 0.5"></a-cursor> 
             </a-entity>
         </a-entity>
         
     </a-scene>
 
     <script>
-        const startOverlay = document.querySelector('#start-overlay');
-        const scene = document.querySelector('a-scene');
+        // Script para ocultar el loader cuando el modelo esté listo
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+            const loader = document.getElementById('loader');
+            // Esperamos un segundo extra para asegurar estabilidad
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
 
-        startOverlay.addEventListener('click', () => {
-            startOverlay.style.display = 'none';
-            // Al hacer clic, le pedimos a la escena que bloquee el puntero (para los controles)
+        // Click para iniciar (bloqueo de puntero)
+        document.addEventListener('click', function () {
+            const scene = document.querySelector('a-scene');
             scene.canvas.requestPointerLock();
         });
     </script>

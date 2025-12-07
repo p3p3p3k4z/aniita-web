@@ -8,32 +8,32 @@ const predefinedStateData = {
         ndvi: 0.82,
         nbr: 0.65,
         evi: 0.68,
-        status: { text: "Very Dense and Healthy Vegetation", class: "alert-success" },
-        analysis: `<h2>Ecosystem Analysis: Chiapas</h2>
-                   <p>Dominated by high-altitude jungles and cloud forests, Chiapas displays exceptionally high plant biomass. Its climate is <strong>warm and humid</strong>, with heavy rains from May to October.</p>
-                   <h3>Impact on Flora and Agriculture</h3>
-                   <p>The high humidity favors crops like <strong>high-altitude coffee and cacao</strong>. Flowering is constant, offering continuous resources for pollinators.</p>
-                   <h3>Key Pollinators</h3>
-                   <ul><li>Melipona Bee (Native)</li><li>Blue Morpho Butterfly</li><li>Cinnamon-bellied Hummingbird</li></ul>
-                   <small class="text-muted">Sources: CONABIO, Naturalista.mx</small>`,
+        status: { text: "Vegetación Muy Densa y Saludable", class: "alert-success" },
+        analysis: `<h2>Análisis del Ecosistema: Chiapas</h2>
+                   <p>Dominado por selvas altas y bosques de niebla, Chiapas muestra una biomasa vegetal excepcionalmente alta. Su clima es <strong>cálido y húmedo</strong>, con fuertes lluvias de mayo a octubre.</p>
+                   <h3>Impacto en Flora y Agricultura</h3>
+                   <p>La alta humedad favorece cultivos como <strong>café de altura y cacao</strong>. La floración es constante, ofreciendo recursos continuos para los polinizadores.</p>
+                   <h3>Polinizadores Clave</h3>
+                   <ul><li>Abeja Melipona (Nativa)</li><li>Mariposa Morfo Azul</li><li>Colibrí Vientre Canelo</li></ul>
+                   <small class="text-muted">Fuentes: CONABIO, Naturalista.mx</small>`,
         flora: [
-            { src: "img/flora/chiapas_ceiba.jpg", alt: "Ceiba Tree" },
-            { src: "img/flora/chiapas_orquidea.jpg", alt: "Orchid" },
-            { src: "img/flora/chiapas_guayacan.jpg", alt: "Guayacan Tree" }
+            { src: "img/flora/chiapas_ceiba.jpg", alt: "Árbol de Ceiba" },
+            { src: "img/flora/chiapas_orquidea.jpg", alt: "Orquídea" },
+            { src: "img/flora/chiapas_guayacan.jpg", alt: "Árbol de Guayacán" }
         ]
     },
     "Oaxaca": {
         ndvi: 0.65,
         nbr: 0.50,
         evi: 0.55,
-        status: { text: "Diverse and Adapted Vegetation", class: "alert-info" },
-        analysis: `<h2>Ecosystem Analysis: Oaxaca</h2>
-                   <p>Oaxaca is a mosaic of ecosystems, from dry forests to temperate forests. Its climate varies from <strong>semi-arid to temperate</strong>, with a well-defined dry season from November to April.</p>
-                   <h3>Impact on Flora and Agriculture</h3>
-                   <p>Species like <strong>agave</strong> thrive here. The dry season concentrates the flowering of cacti, creating pulses of resources for pollinators like bats.</p>
-                   <h3>Key Pollinators</h3>
-                   <ul><li>Lesser Long-nosed Bat</li><li>Oaxaca Hummingbird (endemic)</li><li>Orchid Bees</li></ul>
-                   <small class="text-muted">Sources: Institute of Biology (UNAM), SEMARNAT</small>`,
+        status: { text: "Vegetación Diversa y Adaptada", class: "alert-info" },
+        analysis: `<h2>Análisis del Ecosistema: Oaxaca</h2>
+                   <p>Oaxaca es un mosaico de ecosistemas, desde selvas secas hasta bosques templados. Su clima varía de <strong>semiárido a templado</strong>, con una temporada seca bien definida de noviembre a abril.</p>
+                   <h3>Impacto en Flora y Agricultura</h3>
+                   <p>Especies como el <strong>agave</strong> prosperan aquí. La temporada seca concentra la floración de cactáceas, creando pulsos de recursos para polinizadores como los murciélagos.</p>
+                   <h3>Polinizadores Clave</h3>
+                   <ul><li>Murciélago Magueyero Menor</li><li>Colibrí Oaxaqueño (endémico)</li><li>Abejas de las Orquídeas</li></ul>
+                   <small class="text-muted">Fuentes: Instituto de Biología (UNAM), SEMARNAT</small>`,
         flora: [
             { src: "img/flora/oaxaca_agave.jpg", alt: "Agave" },
             { src: "img/flora/oaxaca_copal.jpg", alt: "Copal" },
@@ -44,18 +44,18 @@ const predefinedStateData = {
         ndvi: 0.58,
         nbr: 0.48,
         evi: 0.51,
-        status: { text: "Resilient Dry Forest Vegetation", class: "alert-warning" },
-        analysis: `<h2>Ecosystem Analysis: Guerrero</h2>
-                   <p>The low deciduous forest, which loses its leaves in the dry season, predominates. The climate is <strong>warm sub-humid</strong>. The vegetation recovers vigorously with the first rains.</p>
-                   <h3>Impact on Flora and Agriculture</h3>
-                   <p>Agriculture of <strong>corn, hibiscus (jamaica), and sesame</strong> depends on the rains. Mass flowering occurs at the end of the dry season, a critical moment for pollinators.</p>
-                   <h3>Key Pollinators</h3>
-                   <ul><li>'Cucu de Mamey' Bee</li><li>Mexican Sheartail Hummingbird</li><li>Native Butterflies</li></ul>
-                   <small class="text-muted">Sources: UAGRO, CONABIO</small>`,
+        status: { text: "Vegetación Resiliente de Selva Seca", class: "alert-warning" },
+        analysis: `<h2>Análisis del Ecosistema: Guerrero</h2>
+                   <p>Predomina la selva baja caducifolia, que pierde sus hojas en la temporada seca. El clima es <strong>cálido subhúmedo</strong>. La vegetación se recupera vigorosamente con las primeras lluvias.</p>
+                   <h3>Impacto en Flora y Agricultura</h3>
+                   <p>La agricultura de <strong>maíz, jamaica y ajonjolí</strong> depende de las lluvias. Ocurre una floración masiva al final de la temporada seca, un momento crítico para los polinizadores.</p>
+                   <h3>Polinizadores Clave</h3>
+                   <ul><li>Abeja 'Cucú de Mamey'</li><li>Colibrí Tijereta Mexicano</li><li>Mariposas Nativas</li></ul>
+                   <small class="text-muted">Fuentes: UAGRO, CONABIO</small>`,
         flora: [
-            { src: "img/flora/guerrero_calliandra.jpg", alt: "Calliandra" },
-            { src: "img/flora/guerrero_agave_cupreata.jpg", alt: "Agave Cupreata" },
-            { src: "img/flora/guerrero_bonete.jpg", alt: "Bonete Tree" }
+            { src: "img/flora/guerrero_calliandra.jpg", alt: "Calliandra (Cabellito de Ángel)" },
+            { src: "img/flora/guerrero_agave_cupreata.jpg", alt: "Agave Cupreata (Maguey Papalote)" },
+            { src: "img/flora/guerrero_bonete.jpg", alt: "Árbol de Bonete" }
         ]
     }
 };
